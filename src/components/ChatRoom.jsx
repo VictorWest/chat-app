@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import Chat from "./Chat"
 import Button from "./Button"
 export default function ChatRoom({auth, currentUser}){
-    const serverURL = 'http://localhost:3000'
-    // https://chat-app-backend-iy1i.onrender.com
+    const serverURL = 'https://chat-app-backend-iy1i.onrender.com'
     const [chatRoom, setChatRoom] = useState([])
     const [data, setData] = useState()
     const [error, setError] = useState(false)
