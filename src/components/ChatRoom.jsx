@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react"
-import SignOut from "../SignOut"
-import { addDoc, getDocs } from "firebase/firestore"
 import Chat from "./Chat"
 import Button from "./Button"
 export default function ChatRoom({auth, currentUser}){
-    const serverURL = 'http://localhost:3000'
+    const serverURL = 'https://chat-app-backend-iy1i.onrender.com'
 
     const [chatRoom, setChatRoom] = useState([])
     const [data, setData] = useState()
@@ -25,7 +23,6 @@ export default function ChatRoom({auth, currentUser}){
       setData(e.target.value)
     }
     function handleSubmit(){
-      // console.log(data);
       fetch(`${serverURL}/new-chat`, {
         method: 'POST',
         headers: {
